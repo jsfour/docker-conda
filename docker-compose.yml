@@ -1,0 +1,10 @@
+base: &base
+  build: .
+  volumes:
+    - .:/myapp
+
+ipython:
+  <<: *base
+  command: ipython notebook --no-browser --ip=0.0.0.0
+  ports:
+    - "8888:8888"
